@@ -90,7 +90,7 @@ function AddItemForm({ onNewItem }) {
     };
 
     return (
-        <Form onSubmit={submitNewItem}>
+        <Form onSubmit={'return false'}>
             <InputGroup className="mb-3">
                 <Form.Control
                     value={newItem}
@@ -98,6 +98,7 @@ function AddItemForm({ onNewItem }) {
                     type="text"
                     placeholder="Item Name"
                     aria-describedby="basic-addon1"
+		    readOnly={true}
                 />
                 <InputGroup.Append>
                     <Button
@@ -165,7 +166,7 @@ function ItemDisplay({ item, onItemUpdate, onItemRemoval }) {
                     <Button
                         size="sm"
                         variant="link"
-                        onClick={removeItem}
+                        onClick={'return false'}
                         aria-label="Remove Item"
                     >
                         <i className="fa fa-trash text-danger" />
